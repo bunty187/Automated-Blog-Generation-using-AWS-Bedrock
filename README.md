@@ -9,7 +9,7 @@ This project leverages AWS Bedrock, the Llama model, AWS Lambda functions, and a
 4. [Downloading Data from s3 Bucket](#downloading-data-from-s3-bucket)
 
 
-### Environment Setup
+## Environment Setup
 1. Create the Virtual Environment:
    * Navigate to your project directory in the terminal and run the following command to create a virtual environment
    * ```
@@ -130,10 +130,10 @@ def lambda_handler(event,context):
    * The response will contain the URL to the generated blog content in the S3 bucket.
     
 ## Downloading Data from S3 Bucket
-    * Access the S3 Console:
-    * Go to the S3 console in your AWS account.
-    * Navigate to Your Bucket:
-    * Open the blog-generation-bucket.
-    1. Download the File:
-        * Locate the generated blog file (e.g., %H%M%S.md).
-        * Select the file and click on the "Download" button.
+  * Access the S3 Console:
+  * Go to the S3 console in your AWS account.
+  * Navigate to Your Bucket:
+  * Open the blog-generation-bucket.
+  1. Download the File:
+      * Locate the generated blog file (e.g., %H%M%S.md).
+      * Select the file and click on the "Download" button.
