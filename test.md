@@ -1,26 +1,23 @@
-# How RAPTOR Works: A Step-by-Step Explanation 
+# How RAPTOR Works: 
 
-## Introduction
-RAPTOR is a novel retrieval mechanism that has been designed to address the challenges of semantic depth and connection in reading comprehension tasks. It builds upon the idea that long texts often contain subtopics and hierarchical structures, and aims to provide more relevant and exhaustive information retrieval for better performance on downstream tasks. 
+## Overview: 
+RAPTOR (Recursive Augmented Processing Tree for Retrieval) is a novel technique for enhancing text retrieval and comprehension, especially for long texts with complex structures and themes. It aims to provide a balance between broad thematic understanding and granular details. 
 
-## Step 1: Text Segmentation 
-The first step in the RAPTOR process is to segment the retrieval corpus into short, contiguous texts of a length of around 100 words. This is a standard technique used in retrieval augmentation, ensuring that the text is broken down into manageable and consistent segments for processing. 
+## Stage 1: Text Segmentation 
+The first stage involves dividing the retrieval corpus into short, contiguous texts of approximately 100 words each. This segmentation process is similar to traditional retrieval augmentation techniques and helps in creating manageable chunks for further processing. 
 
-## Step 2: Recursive Tree Structure 
-The unique aspect of RAPTOR is its recursive tree structure. After segmentation, RAPTOR builds a tree by grouping these short texts (or nodes) based on their semantic similarity, not just their order in the text. This allows for the capture of subtopics and hierarchical relationships within the text. 
+## Stage 2: Tree Structure Construction 
+RAPTOR then builds a recursive tree structure from the segmented texts. This tree is designed to capture the hierarchical nature of the text, with nodes representing thematic concepts and their relationships. Nodes are grouped based on semantic similarity, allowing for a more meaningful organization than simply following the order of the text. 
 
-## Step 3: Node Selection 
-When a question is posed to RAPTOR, it traverses the tree structure to select the most relevant nodes to answer the question. These nodes are chosen from different layers of the tree, depending on the level of granularity required by the question. This allows RAPTOR to provide a more nuanced and exhaustive response, capturing both broader thematic ideas and specific details. 
+## Stage 3: Node Selection and Retrieval 
+When a question is asked, RAPTOR traverses its tree structure to select relevant nodes that provide context and answers. These nodes can belong to different layers of the tree, depending on the level of detail required by the question. This adaptive retrieval process demonstrates RAPTOR's ability to understand the text comprehensively. 
 
-## Step 4: Integration with LLMs 
-RAPTOR can be integrated with Large Language Models (LLMs) to enhance their performance. In the experiments, RAPTOR was combined with GPT-3, GPT-4, and UnifiedQA to demonstrate its effectiveness. 
+For example, in Figure 4, for the question, "What is the central theme of the story?" RAPTOR retrieves an upper-level node containing the sentence, "This story is about the power of human connection...," capturing the main theme. 
 
-## Step 5: Performance Evaluation 
-The performance of RAPTOR is then evaluated using standard metrics such as ROUGE-L, BLEU-1, BLEU-4, METEOR, and F-1 Match scores. These metrics measure the quality of the retrieved information and its relevance to the question asked. 
+## Stage 4: Contextual Understanding and Exhaustiveness 
+RAPTOR's strength lies in its ability to provide exhaustive and relevant information. By leveraging the tree structure, it can often retrieve context that encompasses the answers provided by other retrievers, like DPR, either directly or within higher-layer summaries. This ensures that the information presented is comprehensive and supports better performance on downstream tasks. 
 
-## Conclusion
-By following these steps, RAPTOR provides a more comprehensive and nuanced understanding of the text, outperforming traditional retrieval mechanisms like BM25 and DPR. This results in improved performance on a range of downstream tasks, particularly those requiring information synthesis and understanding of complex textual structures. 
+## Stage 5: Adaptability and Compatibility 
+Finally, RAPTOR is designed to be adaptable and compatible. It can be combined with any retriever, and its recursive tree structure allows for flexible information retrieval, ensuring that it consistently outperforms other retrievers across various datasets and metrics, as demonstrated in the experiments. 
 
---- 
-
-For further details on RAPTOR's implementation and experimental results, please refer to the accompanying research paper. This step-by-step guide provides a high-level overview of how RAPTOR works and the key processes involved in its innovative retrieval approach.
+In summary, RAPTOR enhances text retrieval by constructing a recursive tree structure that captures the semantic depth and connections within the text. Its node selection process, based on question granularity, enables it to provide exhaustive and relevant context, making it a powerful tool for improving comprehension and performance on downstream tasks.
